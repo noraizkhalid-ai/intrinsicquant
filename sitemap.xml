@@ -1,22 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- SEO: Homepage — highest priority -->
   <url>
     <loc>https://intrinsicquant.com/</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- SEO: About page -->
   <url>
     <loc>https://intrinsicquant.com/about/</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- SEO: Contact page -->
   <url>
     <loc>https://intrinsicquant.com/contact/</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Clients page -->
+  <url>
+    <loc>https://intrinsicquant.com/clients/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>

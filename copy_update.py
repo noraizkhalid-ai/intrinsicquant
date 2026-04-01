@@ -12,7 +12,7 @@ headline_old = r'<h1 class="home-hero__headline">.*?</h1>'
 headline_new = """<h1 class="home-hero__headline">
         <span class="word" style="animation-delay:0.10s">Outsmart</span>
         <span class="word" style="animation-delay:0.22s">The</span>
-        <span class="word" style="animation-delay:0.34s">Market.</span><br>
+        <span class="word" style="animation-delay:0.34s">Market</span><br>
         <span class="word" style="animation-delay:0.50s">With</span>
         <span class="word" style="animation-delay:0.62s">Absolute</span>
         <span class="word" style="animation-delay:0.74s">Data</span>

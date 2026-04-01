@@ -4,25 +4,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicons for Google Search & Browser recognition -->
+  <link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="icon" href="../favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <title>About Us — IntrinsicQuant</title>
   <meta name="description"
     content="Learn about IntrinsicQuant and our mission to democratize institutional-grade financial data.">
+  <!-- SEO: keyword meta tag with brand variations and common typos -->
+  <meta name="keywords" content="Intrinsic Quant, IntrinsicQuant, intrinsicquant, intrinsic quant, intrisic quant, intrinsic quant about, intrinsicquant.com, quantitative financial data, quantitative data platform, point-in-time fundamentals, financial data API, quant data provider, institutional financial data">
   <link rel="canonical" href="https://intrinsicquant.com/about/">
   <meta property="og:title" content="About Us — IntrinsicQuant">
   <meta property="og:description"
     content="Learn about IntrinsicQuant and our mission to democratize institutional-grade financial data.">
-  <meta property="og:image" content="https://intrinsicquant.com/assets/images/Png%20Logo.png">
+  <!-- SEO: fixed OG image path to match actual file -->
+  <meta property="og:image" content="https://intrinsicquant.com/assets/images/logo.png">
   <meta property="og:url" content="https://intrinsicquant.com/about/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About Us — IntrinsicQuant">
   <meta name="twitter:description" content="Learn about IntrinsicQuant and our mission to democratize institutional-grade financial data.">
-  <meta name="twitter:image" content="https://intrinsicquant.com/assets/images/Png%20Logo.png">
+  <!-- SEO: fixed Twitter image path to match actual file -->
+  <meta name="twitter:image" content="https://intrinsicquant.com/assets/images/logo.png">
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css">
-  <script defer src="/js/main.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- SEO: Organization JSON-LD for about page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IntrinsicQuant",
+    "alternateName": ["Intrinsic Quant", "intrinsicquant", "intrinsic quant"],
+    "description": "Intrinsic Quant (IntrinsicQuant) is an institutional-grade quantitative financial data platform delivering point-in-time fundamentals, options flow analytics, and API access to systematic traders and asset managers.",
+    "logo": "https://intrinsicquant.com/assets/images/logo.png",
+    "url": "https://intrinsicquant.com/",
+    "email": "connect@intrinsicquant.com"
+  }
+  </script>
+  <!-- SEO: BreadcrumbList for about page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Intrinsic Quant Home", "item": "https://intrinsicquant.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About Intrinsic Quant", "item": "https://intrinsicquant.com/about/" }
+    ]
+  }
+  </script>
+  <script defer src="../js/main.js"></script>
 </head>
 
 <body>
@@ -32,13 +64,12 @@
     <div class="container">
       <div class="nav__inner">
 
-        <a class="nav__logo" href="/">
-          <img src="/assets/images/logo.png" alt="IntrinsicQuant" height="80">
+        <a class="nav__logo" href="../">
+          <img src="../assets/images/logo.png" alt="Intrinsic Quant — IntrinsicQuant Logo" height="80">
         </a>
 
         <ul class="nav__links">
           <li class="nav__item">
-            <a href="/" class="nav__link">Home</a>
           </li>
           <li class="nav__item">
             <a href="/about/" class="nav__link">About Us</a>
@@ -78,7 +109,8 @@
     <div class="container">
       <div class="about-hero__content">
         <p class="about-hero__label">About IntrinsicQuant</p>
-        <h1 class="about-hero__headline">Democratizing Institutional-Grade Financial Intelligence.</h1>
+        <!-- SEO: H1 includes brand keyword "Intrinsic Quant" -->
+        <h1 class="about-hero__headline">About Intrinsic Quant — Democratizing Institutional-Grade Financial Intelligence.</h1>
         <p class="about-hero__subline">For decades, the highest quality financial datasets and fundamental models were locked behind $25k-a-year terminals. We built IntrinsicQuant to break that monopoly, providing systematic traders and researchers with absolute data integrity at an accessible price.</p>
         <div class="about-hero__buttons">
           <a href="/contact/" class="btn btn--primary btn--lg">Request Trial Access</a>

@@ -1,4 +1,18 @@
+# IntrinsicQuant — robots.txt
+# SEO: Allow all search engines to crawl public content
+
 User-agent: *
 Allow: /
+Allow: /about/
+Allow: /contact/
+Allow: /clients/
 
+# Disallow utility/build files
+Disallow: /*.py$
+Disallow: /.git/
+
+# Sitemap location
 Sitemap: https://intrinsicquant.com/sitemap.xml
+
+# Preferred domain
+Host: https://intrinsicquant.com
