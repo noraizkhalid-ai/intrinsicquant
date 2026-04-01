@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IntrinsicQuant — Quantitative Financial Intelligence</title>
+  <meta name="description"
+    content="IntrinsicQuant is a Bloomberg-grade quantitative data platform delivering point-in-time fundamentals, options flow, and API access to systematic traders.">
+  <link rel="canonical" href="https://intrinsicquant.com/">
+  <meta property="og:title" content="IntrinsicQuant — Institutional-Grade Quantitative Financial Intelligence">
+  <meta property="og:description"
+    content="IntrinsicQuant is a Bloomberg-grade quantitative data platform delivering point-in-time fundamentals, options flow, and API access to systematic traders.">
+  <meta property="og:image" content="https://intrinsicquant.com/assets/images/logo.png">
+  <meta property="og:url" content="https://intrinsicquant.com/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IntrinsicQuant — Institutional-Grade Quantitative Financial Intelligence">
+  <meta name="twitter:description" content="IntrinsicQuant is a Bloomberg-grade quantitative data platform delivering point-in-time fundamentals, options flow, and API access to systematic traders.">
+  <meta name="twitter:image" content="https://intrinsicquant.com/assets/images/logo.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IntrinsicQuant",
+    "image": "https://intrinsicquant.com/assets/images/logo.png",
+    "@id": "https://intrinsicquant.com/",
+    "url": "https://intrinsicquant.com/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1700 S Lamar Blvd #338",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "postalCode": "78704",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+  <style>
+    /* ══════════════════════════════════════════════
+   HOME — SECTION 1: HERO
+══════════════════════════════════════════════ */
+    .home-hero {
+      position: relative;
+      min-height: 100vh;
+      background: #000;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 90px;
+    }
+
+    /* Diagonal geometric texture */
+    .home-hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(135deg,
+          rgba(255, 180, 0, 0.035) 0px,
+          rgba(255, 180, 0, 0.035) 1px,
+          transparent 1px,
+          transparent 48px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Radial glow behind headline */
+    .home-hero__glow {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 500px;
+      background: radial-gradient(ellipse at center, rgba(255, 180, 0, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .home-hero__inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--container-padding);
+      padding-block: 80px;
+    }
+
+    .home-hero__tag {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: var(--weight-semibold);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      border: 1px solid rgba(255, 180, 0, 0.3);
+      padding: 6px 16px;
+      margin-bottom: 36px;
+      background: rgba(255, 180, 0, 0.05);
+    }
+
+    .home-hero__headline {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: #fff;
+      max-width: 820px;
+      margin-bottom: 28px;
+    }
+
+    /* Word-by-word stagger */
+    .home-hero__headline .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(36px);
+      animation: wordUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes wordUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .home-hero__sub {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--color-light);
+      opacity: 0.75;
+      max-width: 540px;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: heroFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+    }
+
+    @keyframes heroFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 0.75;
+        transform: translateY(0);
+      }
+    }
+
+    .home-hero__actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: heroFadeIn2 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+    }
+
+    @keyframes heroFadeIn2 {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-gold);
+      color: #000;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.2) 50%, transparent 60%);
+      background-size: 200%;
+      background-position: 200%;
+      transition: background-position 0.55s;
+    }
+
+    .hero-btn-primary:hover {
+      background: #ffc933;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(255, 180, 0, 0.3);
+    }
+
+    .hero-btn-primary:hover::after {
+      background-position: -200%;
+    }
+
+    .hero-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--color-gold);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border: 1.5px solid var(--color-gold);
+      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+    }
+
+    .hero-btn-outline:hover {
+      background: rgba(255, 180, 0, 0.08);
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(255, 180, 0, 0.15);
+    }
+
+    /* ══════════════════════════════════════════════
+   HOME — SECTION 2: CREDIBILITY STRIP
+══════════════════════════════════════════════ */
+    .cred-strip {
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255, 180, 0, 0.08);
+      border-bottom: 1px solid rgba(255, 180, 0, 0.08);
+      padding: 18px 0;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+    }
+
+    .cred-strip::before,
+    .cred-strip::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      z-index: 2;
+    }
+
+    .cred-strip::before {
+      left: 0;
+      background: linear-gradient(to right, #0a0a0a, transparent);
+    }
+
+    .cred-strip::after {
+      right: 0;
+      background: linear-gradient(to left, #0a0a0a, transparent);
+    }
+
+    .cred-strip__track {
+      display: flex;
+      flex-shrink: 0;
+      animation: scroll-strip 25s linear infinite;
+    }
+
+    @keyframes scroll-strip {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .cred-strip__text {
+      display: flex;
+      align-items: center;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(234, 234, 234, 0.55);
+      margin: 0;
+      padding-right: 20px;
+      white-space: nowrap;
+    }
+
+    .cred-strip__text .diamond {
+      color: var(--color-gold);
+      margin: 0 20px;
+      font-size: 0.6rem;
+    }
+
+    /* ══════════════════════════════════════════════
+   HOME — SECTION 3: PROBLEM
+══════════════════════════════════════════════ */
+    .problem-section {
+      background: var(--color-light);
+      color: #000;
+      padding-block: clamp(60px, 8vw, 120px);
+    }
+
+    .problem-section .sec-label {
+      color: var(--color-gold);
+    }
+
+    .problem-section .sec-headline {
+      color: #000;
+    }
+
+    .problem-section .sec-sub {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 64px;
+    }
+
+    .pain-card {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      border-top: 3px solid var(--color-gold);
+      padding: 40px 32px;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .pain-card:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .pain-icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .pain-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 12px;
+    }
+
+    .pain-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(0, 0, 0, 0.55);
+    }
+
+    /* ══════════════════════════════════════════════
+   HOME — SECTION 4: SERVICES
+══════════════════════════════════════════════ */
+    .services-section {
+      background: #000;
+      padding-block: clamp(60px, 8vw, 120px);
+    }
+
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 64px;
+      background: rgba(255, 180, 0, 0.08);
+      border: 1px solid rgba(255, 180, 0, 0.1);
+      align-items: stretch;
+      /* equal height */
+    }
+
+    .svc-card {
+      background: #0d0d0d;
+      padding: 52px 40px 64px;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.35s, box-shadow 0.35s;
+    }
+
+    /* Gold gradient overlay that fades in on hover */
+    .svc-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg,
+          rgba(180, 120, 0, 0.14) 0%,
+          rgba(255, 180, 0, 0.06) 50%,
+          transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .svc-card>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .svc-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--color-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease-out);
+      z-index: 2;
+    }
+
+    .svc-card:hover {
+      background: #111;
+      box-shadow: inset 0 0 60px rgba(150, 100, 0, 0.12);
+    }
+
+    .svc-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .svc-card:hover::after {
+      opacity: 1;
+    }
+
+    .svc-arrow {
+      position: absolute;
+      bottom: 32px;
+      right: 36px;
+      color: var(--color-gold);
+      font-size: 1.3rem;
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: all 0.3s;
+    }
+
+    .svc-card:hover .svc-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .svc-icon {
+      font-size: 2.2rem;
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .svc-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .svc-card p {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: rgba(240, 237, 230, 0.45);
+      max-width: 260px;
+    }
+
+    /* ══════════════════════════════════════════════
+   HOME — SECTION 5: WHY INTRINSICQUANT
+══════════════════════════════════════════════ */
+    .why-section {
+      background: var(--color-light);
+      color: #000;
+      padding-block: clamp(60px, 8vw, 120px);
+    }
+
+    .why-section .sec-label {
+      color: var(--color-gold);
+    }
+
+    .why-section .sec-headline {
+      color: #000;
+    }
+
+    .why-cols {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 64px;
+    }
+
+    .why-col {
+      padding: 40px 32px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .why-col:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09);
+      transform: translateY(-4px);
+    }
+
+    .why-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--color-gold);
+      line-height: 1;
+      margin-bottom: 20px;
+      display: block;
+      opacity: 0.8;
+    }
+
+    .why-col h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .why-col p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: rgba(0, 0, 0, 0.55);
+    }
+
+    /* ══════════════════════════════════════════════
+   HOME — SECTION 5.5: ABOUT CTA
+══════════════════════════════════════════════ */
+    .about-cta-section {
+      background: #000;
+      padding-block: clamp(60px, 8vw, 100px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse at center, rgba(255, 180, 0, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .about-cta-inner {
+      position: relative;
+      text-align: center;
+      max-width: 700px;
+      margin-inline: auto;
+    }
+
+    .about-cta-section .sec-label {
+      color: var(--color-gold);
+    }
+
+    .about-cta-section .sec-headline {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .about-cta-section .sec-sub {
+      color: rgba(240, 237, 230, 0.55);
+      margin-bottom: 40px;
+    }
+
+    .about-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--color-gold);
+      color: #000;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-cta-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.25) 50%, transparent 60%);
+      background-size: 200%;
+      background-position: 200%;
+      transition: background-position 0.55s;
+    }
+
+    .about-cta-btn:hover {
+      background: #ffc933;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 180, 0, 0.35);
+    }
+
+    .about-cta-btn:hover::after {
+      background-position: -200%;
+    }
+
+    .about-cta-btn svg {
+      transition: transform 0.3s;
+    }
+
+    .about-cta-btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ══════════════════════════════════════════════
+   HOME — SECTION 6: HOW IT WORKS
+══════════════════════════════════════════════ */
+    .process-section {
+      background: #000;
+      padding-block: clamp(60px, 8vw, 120px);
+    }
+
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 72px;
+      position: relative;
+    }
+
+    /* Horizontal connecting gold line — desktop */
+    .steps-row::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      /* vertically centered on the 64px circle */
+      left: calc(12.5%);
+      right: calc(12.5%);
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255, 180, 0, 0), rgba(255, 180, 0, 0.6) 20%, rgba(255, 180, 0, 0.6) 80%, rgba(255, 180, 0, 0));
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .step-item {
+      padding: 0 24px;
+      position: relative;
+      text-align: center;
+    }
+
+    .step-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #000;
+      border: 2px solid var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      position: relative;
+      z-index: 1;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .step-item:hover .step-circle {
+      background: var(--color-gold);
+      color: #000;
+      box-shadow: 0 0 24px rgba(255, 180, 0, 0.35);
+    }
+
+    .step-item h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .step-item p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: rgba(240, 237, 230, 0.45);
+    }
+
+    /* ══════════════════════════════════════════════
+   HOME — SECTION 7: CTA BANNER
+══════════════════════════════════════════════ */
+    .cta-gold {
+      background: var(--color-gold);
+      padding-block: clamp(60px, 8vw, 100px);
+      text-align: center;
+    }
+
+    .cta-gold h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900;
+      color: #000;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      max-width: 680px;
+      margin-inline: auto;
+      margin-bottom: 16px;
+    }
+
+    .cta-gold__sub {
+      font-size: 1rem;
+      color: rgba(0, 0, 0, 0.65);
+      margin-bottom: 44px;
+      font-weight: 500;
+    }
+
+    .cta-gold__btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn-black {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #000;
+      color: var(--color-gold);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .cta-btn-black:hover {
+      background: #1a1a1a;
+      transform: translateY(-2px);
+    }
+
+    .cta-btn-outline-black {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: #000;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border: 1.5px solid #000;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .cta-btn-outline-black:hover {
+      background: rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* ══════════════════════════════════════════════
+   SHARED SECTION LABEL / HEADLINE HELPERS
+══════════════════════════════════════════════ */
+    .sec-label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 20px;
+    }
+
+    .sec-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 20px;
+      max-width: 640px;
+    }
+
+    .sec-sub {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(240, 237, 230, 0.5);
+      max-width: 540px;
+      margin-inline: auto;
+      margin-bottom: 0;
+    }
+
+    /* ══════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .why-cols {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 880px) {
+      .pain-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .svc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      /* Hide horizontal desktop line on mobile */
+      .steps-row::before {
+        display: none;
+      }
+
+      .step-item {
+        text-align: left;
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+        padding: 0 0 0 0;
+        position: relative;
+        margin-bottom: 40px;
+      }
+
+      /* Vertical gold line runs alongside each step except the last */
+      .step-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 64px;
+        /* below the circle */
+        left: 31px;
+        /* center of 64px circle */
+        width: 1px;
+        bottom: -8px;
+        background: linear-gradient(180deg, rgba(255, 180, 0, 0.6), rgba(255, 180, 0, 0));
+        z-index: 0;
+      }
+
+      .step-circle {
+        margin: 0;
+        flex: 0 0 calc(64px) !important;
+        width: 64px !important;
+        height: 64px !important;
+        min-width: 64px !important;
+        min-height: 64px !important;
+        aspect-ratio: 1 / 1 !important;
+        border-radius: 50% !important;
+        position: relative;
+        z-index: 1;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        line-height: 1 !important;
+      }
+
+      .step-item>div {
+        flex: 1;
+        padding-top: 16px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .home-hero__headline .word {
+        animation: heroFadeIn 0.8s ease forwards !important;
+        animation-delay: 0.15s !important;
+      }
+
+      .why-cols {
+        grid-template-columns: 1fr;
+      }
+
+      .home-hero__actions {
+        flex-direction: column;
+      }
+
+      .hero-btn-primary,
+      .hero-btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .cta-gold__btns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-btn-black,
+      .cta-btn-outline-black {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+      }
+    }
+  </style>
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="container">
+      <div class="nav__inner">
+
+        <a class="nav__logo" href="/">
+          <img src="assets/images/logo.png" alt="IntrinsicQuant" height="80">
+        </a>
+
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a href="/" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="/about/" class="nav__link">About Us</a>
+          </li>
+          <li class="nav__item">
+            <a href="/#services" class="nav__link">Services</a>
+          </li>
+          
+        </ul>
+
+        <div class="nav__ctas">
+          
+          <a class="btn btn--sm btn--primary" href="/contact/">Request Access</a>
+        </div>
+
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile nav drawer -->
+  <div class="nav__mobile" id="nav-mobile">
+    <a href="/" class="nav__link">Home</a>
+    <a href="/about/" class="nav__link">About Us</a>
+    <a href="/#services" class="nav__link">Services</a>
+    
+    <div style="margin-top:auto;display:flex;flex-direction:column;gap:12px;">
+      
+      <a class="btn btn--primary" href="/contact/">Request Access</a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+     SECTION 1 — HERO
+════════════════════════════════════════════ -->
+  <section class="home-hero" id="home-hero">
+    <div class="home-hero__bg"></div>
+    <div class="home-hero__glow"></div>
+    <div class="home-hero__inner">
+      <span class="home-hero__tag">Institutional-Grade Quantitative Intelligence</span>
+      <h1 class="home-hero__headline">
+        <span class="word" style="animation-delay:0.10s">Outsmart</span>
+        <span class="word" style="animation-delay:0.22s">The</span>
+        <span class="word" style="animation-delay:0.34s">Market.</span><br>
+        <span class="word" style="animation-delay:0.50s">With</span>
+        <span class="word" style="animation-delay:0.62s">Absolute</span>
+        <span class="word" style="animation-delay:0.74s">Data</span>
+        <span class="word" style="animation-delay:0.86s">Precision.</span>
+      </h1>
+      <p class="home-hero__sub">Advanced quantitative modeling, fundamental data feeds, and institutional insights powered by a dedicated North America equities database, built for systematic investors and asset managers.</p>
+      <div class="home-hero__actions">
+        <a href="/contact/" class="hero-btn-primary">Request Trial Access</a>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     SECTION 2 — CREDIBILITY STRIP
+════════════════════════════════════════════ -->
+  <div class="cred-strip">
+    <div class="cred-strip__track">
+      <p class="cred-strip__text">
+        <span>Dedicated North America Database</span><span class="diamond">◆</span>
+        <span>50,000+ Global Equities</span><span class="diamond">◆</span>
+        <span>On-Demand DCF Models</span><span class="diamond">◆</span>
+        <span>Market Regime Indicators</span><span class="diamond">◆</span>
+        <span>Options Order Flow</span><span class="diamond">◆</span>
+        <span>Point-in-Time Fundamentals</span><span class="diamond">◆</span>
+        <span>Intrinsic Value Screener</span><span class="diamond">◆</span>
+        <span>REST API & Snowflake Delivery</span><span class="diamond">◆</span>
+</p>
+      <p class="cred-strip__text" aria-hidden="true">
+        <span>Dedicated North America Database</span><span class="diamond">◆</span>
+        <span>50,000+ Global Equities</span><span class="diamond">◆</span>
+        <span>On-Demand DCF Models</span><span class="diamond">◆</span>
+        <span>Market Regime Indicators</span><span class="diamond">◆</span>
+        <span>Options Order Flow</span><span class="diamond">◆</span>
+        <span>Point-in-Time Fundamentals</span><span class="diamond">◆</span>
+        <span>Intrinsic Value Screener</span><span class="diamond">◆</span>
+        <span>REST API & Snowflake Delivery</span><span class="diamond">◆</span>
+</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+     SECTION 3 — PROBLEM
+════════════════════════════════════════════ -->
+  <section class="problem-section">
+    <div class="container">
+      <span class="sec-label">The Edge</span>
+      <h2 class="sec-headline" style="color:#000;">An information advantage is a prerequisite.</h2>
+      <p class="sec-sub" style="color:rgba(0,0,0,0.6); margin-inline:0;">In modern quantitative trading, navigating market noise without clean, point-in-time structured data means you are the liquidity for those who have it.</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <span class="pain-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <line x1="23" y1="11" x2="17" y2="11" />
+              <line x1="20" y1="8" x2="20" y2="14" />
+            </svg>
+          </span>
+          <h4>Fragmented Data Sources</h4>
+          <p>Piecing together fundamental data from scattered legacy vendors introduces unacceptable latency and normalization error.</p>
+        </div>
+        <div class="pain-card">
+          <span class="pain-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <line x1="2" y1="10" x2="22" y2="10" />
+              <line x1="7" y1="15" x2="10" y2="15" />
+              <line x1="13" y1="15" x2="17" y2="15" />
+            </svg>
+          </span>
+          <h4>Look-Ahead Bias</h4>
+          <p>Using non-point-in-time data guarantees your backtests will hallucinate returns that disappear in live markets.</p>
+        </div>
+        <div class="pain-card">
+          <span class="pain-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <polyline points="8 21 12 17 16 21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <circle cx="18" cy="7" r="1" fill="#00E5FF" />
+            </svg>
+          </span>
+          <h4>Inflexible Delivery</h4>
+          <p>Tied to legacy terminals instead of having robust REST APIs or Snowflake delivery limits your systematic pipeline.</p>
+        </div>
+        <div class="pain-card">
+          <span class="pain-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </span>
+          <h4>Black-Box Methodologies</h4>
+          <p>Relying on opaque third-party sentiment scores without access to the underlying calculations creates catastrophic blind spots.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     SECTION 4 — SERVICES
+════════════════════════════════════════════ -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <span class="sec-label">Our Platform</span>
+      <h2 class="sec-headline">Institutional-grade tools.<br>Delivered via modern architecture.</h2>
+      <div class="svc-grid">
+
+        <a href="/#book" class="svc-card">
+          <span class="svc-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+              stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </span>
+          <h3>Quantitative Analytics Terminal</h3>
+          <p>Access deep fundamental analysis, relative valuations, and custom factor models directly in your browser.</p>
+          <span class="svc-arrow">→</span>
+        </a>
+
+        <a href="/#book" class="svc-card">
+          <span class="svc-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+              stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+              <path d="M2 20h20" />
+            </svg>
+          </span>
+          <h3>Point-in-Time Fundamentals API</h3>
+          <p>Over 20 years of point-in-time history, perfectly stitched to prevent survivorship bias in your backtesting.</p>
+          <span class="svc-arrow">→</span>
+        </a>
+
+        <a href="/#book" class="svc-card">
+          <span class="svc-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+              stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <polyline points="8 21 12 17 16 21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+              <path d="M6 8h.01M9 8h.01" />
+              <path d="M6 11h12" />
+            </svg>
+          </span>
+          <h3>Options Flow & Positioning</h3>
+          <p>Track institutional sweepers, block trades, and dealer gamma positioning to anticipate mechanical market movements.</p>
+          <span class="svc-arrow">→</span>
+        </a>
+
+        <a href="/#book" class="svc-card">
+          <span class="svc-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+              stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </span>
+          <h3>Alternative Data Integration</h3>
+          <p>Credit card consensus, satellite imagery estimations, and social sentiment models quantified into actionable signals.</p>
+          <span class="svc-arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     SECTION 5 — WHY INTRINSICQUANT
+════════════════════════════════════════════ -->
+  <section class="why-section">
+    <div class="container">
+      <span class="sec-label">The IntrinsicQuant Advantage</span>
+      <h2 class="sec-headline" style="color:#000;">Engineering meets absolute accuracy.</h2>
+      <div class="why-cols">
+        <div class="why-col">
+          <span class="why-num">01</span>
+          <h4>Absolute Data Integrity</h4>
+          <p>Every data point is strictly audited and cross-referenced. If we don't trust it with our own capital, it's not on the platform.</p>
+        </div>
+        <div class="why-col">
+          <span class="why-num">02</span>
+          <h4>Sub-Millisecond APIs</h4>
+          <p>Modern infrastructure built for quants. Access data via REST API, WebSockets, or direct Snowflake data shares.</p>
+        </div>
+        <div class="why-col">
+          <span class="why-num">03</span>
+          <h4>Transparent Calculation</h4>
+          <p>Open-book methodology on all custom factors and scoring models. Verify the math yourself before implementing.</p>
+        </div>
+        <div class="why-col">
+          <span class="why-num">04</span>
+          <h4>Institutional Coverage</h4>
+          <p>Coverage of over 10,000+ global equities, fixed income derivatives, and macroeconomic indicators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     SECTION 5.5 — ABOUT CTA
+════════════════════════════════════════════ -->
+  <section class="about-cta-section">
+    <div class="container">
+      <div class="about-cta-inner">
+        <span class="sec-label">Who We Are</span>
+        <h2 class="sec-headline">Want to know the team behind the data?</h2>
+        <p class="sec-sub">Learn about our mission, methodology, and the quantitative researchers committed to absolute data integrity.</p>
+        <a href="/about/" class="about-cta-btn">
+          Learn About Us
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     SECTION 6 — HOW IT WORKS
+════════════════════════════════════════════ -->
+  <section class="process-section" id="process">
+    <div class="container" style="text-align:center;">
+      <span class="sec-label">Custom Plans</span>
+      <h2 class="sec-headline" style="margin-inline:auto;">Every desk is different.<br>Your plan should be too.</h2>
+      <p class="sec-sub" style="margin-bottom:48px;">We build custom data packages around your coverage universe, delivery method, and budget. Whether you need a single API endpoint or a full Snowflake data share, reach out and we will scope it together.</p>
+      <a href="/contact/" class="hero-btn-primary" style="display:inline-flex;">Get a Custom Plan <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     SECTION 7 — CTA BANNER
+════════════════════════════════════════════ -->
+  <section class="cta-gold" id="book">
+    <div class="container">
+      <h2>Ready to build your quantitative edge?</h2>
+      <p class="cta-gold__sub">Request access to our API endpoints or schedule a live terminal demonstration.</p>
+      <div class="cta-gold__btns">
+        <a href="/contact/" class="cta-btn-black">Request Access</a>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand -->
+        <div class="footer-col footer-brand">
+          <a class="footer-logo" href="/">IntrinsicQuant</a>
+          <p class="footer-tagline">Institutional. Accurate. Accessible.</p>
+          <div class="footer-contact">
+            
+            <a class="footer-contact-link" href="mailto:connect@intrinsicquant.com">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              connect@intrinsicquant.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#book">Quantitative Analytics Terminal</a></li>
+            <li><a href="/#book">Point-in-Time Fundamentals API</a></li>
+            <li><a href="/#book">Options Flow & Positioning</a></li>
+            <li><a href="/#book">Alternative Data Integration</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Location & Social -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Find Us</h4>
+          <p class="footer-address">1700 S Lamar Blvd #338<br>Austin, TX 78704, United States</p>
+          
+          
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025–2026 IntrinsicQuant. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
