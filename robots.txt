@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 Allow: /about/
 Allow: /contact/
-Allow: /clients/
+
 
 # Disallow utility/build files
 Disallow: /*.py$
